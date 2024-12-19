@@ -1,0 +1,93 @@
+Data Analysis Workflow:  
+
+1. Objectives 
+
+Research Question: How does proximity to major airports affect air quality over time? (or: How does proximity to Hartsfield–Jackson Atlanta International Airport affect air quality over time?) 
+
+Key Hypotheses:  
+
+Proximity to major airports significantly increases air pollution levels (e.g. <20 km and >30 km as control). 
+
+Emission reduction measures have improved air quality (AQI) near airports over time. 
+
+ 
+
+2. Data Collection & Preparation 
+
+Source: EPA’s Air Quality System (AQS) database & 2023 Air Traffic Report (ATR) for airport selection. 
+
+Scope:  
+
+Download daily pollutant data (PM2.5, NOx, CO, and others) from 1999–2024. 
+
+Focus on monitors within varying distances of the airport (using Niall’s data fetching code).   
+
+Derive Metrics:  
+
+Calculate daily AQI for each pollutant using EPA’s method 
+
+ 
+
+  P13-17 Technical Assistance Document for the Reporting of Daily Air Quality 
+
+ 
+
+3. Visualisation 
+
+Time Series Plots:  
+
+Display AQI and pollutant concentration trends over time. 
+
+Zone Comparisons:  
+
+Visualize pollutant levels across defined proximity zones (e.g., box plots). 
+
+Spatial Processing:  
+
+Match air quality monitoring stations to airports using geospatial analysis (as in workshop 3) to generate an interactive map for better visualization.  
+
+ 
+
+4. Analysis 
+
+à Correlation and Proximity Analysis 
+
+Test the relationship between proximity and air quality metrics:  
+
+Statistical Techniques: Pearson/Spearman correlation, scatterplots. 
+
+Compare AQI across zones (e.g., <10 km vs. >20 km). 
+
+à Hypothesis Testing 
+
+Hypothesis 1: Does proximity negatively impact air quality?  
+
+Test: T-test to compare pollutant levels across proximity zones. (Define two groups of proximity, ‘near’ and ‘far’)  
+
+H0: The mean air quality is the same for both groups 
+
+H1: The mean air quality is different for the two groups 
+
+Outcome: Establish whether pollutant levels are significantly higher near airports. 
+
+Hypothesis 2: Do emission reduction policies reduce pollutants over time?  
+
+Test: Paired t-test or regression discontinuity analysis. 
+
+Outcome: Assess policy effectiveness. 
+
+  
+
+à Temporal Analysis: Use time series analysis to Identify trends in pollutant levels over time. 
+
+ 
+
+** Predictive Modeling ** (only if we have time) 
+
+Build a regression model to predict AQI based on proximity, airport activity, and emission policies.  
+
+Features: Proximity zones, passenger traffic, time, and policy indicators. 
+
+Model Types: Random Forest on lecture 10 for example? 
+
+ 
